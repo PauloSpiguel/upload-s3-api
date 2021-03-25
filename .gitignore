@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+
+node_modules/
+build/
+dist/
+temp/
+
+tmp/*
+!tmp/.gitkeep
+
+.env*
+!.env.exemple
