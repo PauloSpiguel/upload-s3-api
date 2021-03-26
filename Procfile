@@ -1,1 +1,1 @@
-web: cd client && yarn install && yarn start
+web: yarn start:prod
