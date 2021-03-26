@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 
+const PORT = process.env.PORT || 5000;
+
 const profilesRouter = require("./routes/profile.routes");
 const productsRouter = require("./routes/products.routes");
 const filesRouter = require("./routes/files.routes");
@@ -30,6 +32,6 @@ app.use("/profile", profilesRouter);
 app.use("/product", productsRouter);
 app.use("/products", productsRouter);
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`🚀 Server is a running on port ${PORT}!`);
+app.listen(PORT || 5000, () => {
+  console.log(`🚀 Server is a running on ${PORT}!`);
 });
