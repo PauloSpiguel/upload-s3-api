@@ -63,6 +63,14 @@ fileRouter.patch("/", upload.single("file"), async (req, res) => {
   try {
     const { originalname: name, size, key, location: url } = req.file;
 
+    const countFiles = await prisma.file.count();
+
+    if (countFiles >= 100) {
+      return res
+        .status(401)
+        .json({ message: "It exceeded the limit of uploads!" });
+    }
+
     const file = await prisma.file.create({
       data: {
         name,

@@ -20,7 +20,7 @@ app.use(morgan("dev"));
 
 app.use("/upload", filesRouter);
 app.use("/files", filesRouter);
-app.use("/upload-image-product", filesRouter);
+app.use("/upload-product", filesRouter);
 app.use(
   "/file",
   express.static(path.resolve(__dirname, "..", "tmp", "uploads"))
